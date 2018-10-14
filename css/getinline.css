@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background-color: #d0c3e7;
+    background-color: #bddae2;
     height: 100vh;
 }
 
@@ -129,8 +129,8 @@ h3, h4, h5, h6, p {
 
 .title-text {
     color: rgb(80, 80, 80);
-    font-size: 7vw;
-    padding-top: 3vw;
+    font-size: 7vh;
+    padding-top: 3vh;
 }
 
 ul {
@@ -139,7 +139,7 @@ ul {
 
 @media(max-width: 768px) {
     .title-text {
-        font-size: 15vw;
+        font-size: 10vw;
     }
     h2 {
         font-size: 10vw;
@@ -210,15 +210,20 @@ ul {
 }
 
 .index-titletext {
-    height: 60%;
+    height: 22vh;
 }
 
 .index-subtext {
-    background-color: #b3a42f;
+    background-color: #323a3c;
     color: white;
-    height: 35%;
+    height: 78vh;
     z-index: 0;
     margin-top: -2px;
+}
+
+.index-btn {
+  color: black;
+  font-size: 3.5vh;
 }
 
 .index-subtext h3 {
@@ -234,15 +239,20 @@ hr {
 
 @media(max-width: 768px) {
     .index-titletext {
-        height: 50vh;
+        height: 22vh;
     }
     .index-subtext {
-        height: 50vh;
+        height: 78vh;
     }
     .subtext {
-        width: 80%;
+        width: 90%;
+        font-size: 4vh;
         margin-left: auto;
         margin-right: auto;
+    }
+    .index-btn {
+      color: black;
+      font-size: 3.5vh;
     }
 }
 
