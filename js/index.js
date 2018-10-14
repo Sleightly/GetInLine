@@ -89,3 +89,56 @@ function pad(val) {
     return valString;
   }
 }
+
+
+var estimatedWait = {
+  x: [1, 2, 3, 4],
+  y: [10, 15, 13, 17],
+  mode: 'lines+markers'
+};
+
+var data = [estimatedWait];
+
+var layout1 = {
+    title: 'Estimated Wait Time',
+    line: {
+        dash: 'dot',
+        width: 0.5
+    },
+    xaxis: {
+        title: 'Time elapsed',
+    },
+    yaxis: {
+        title: 'Wait Time in minutes',
+    }
+};
+var layout2 = {
+    title: 'Estimated Wait Time',
+    line: {
+        dash: 'dot',
+        width: 0.5
+    },
+    xaxis: {
+        title: 'Time elapsed',
+    },
+    yaxis: {
+        title: 'Wait Time in minutes',
+    }
+};
+var layout3 = {
+    title: 'Estimated Wait Time',
+    line: {
+        dash: 'dot',
+        width: 0.5
+    },
+    xaxis: {
+        title: 'Time elapsed',
+    },
+    yaxis: {
+        title: 'Wait Time in minutes',
+    }
+};
+
+Plotly.newPlot('ewt', data, layout1);
+Plotly.newPlot('nump', data, layout);
+Plotly.newPlot('vel', data, layout);
