@@ -144,15 +144,15 @@ def cross_correlation(count, name):
 
 
 if __name__ == '__main__':
-    name = 'line3'
-    #count = count_imgs('videos/line3.mp4', name)
-    count = 302
-    #print("resizing")
-    #resize_imgs(count, name)
-    #print("cross correlation")
-    #cross_correlation(count, name)
-    #print('drawing boxes')
-    #localize_objects(count, name)
+    name = 'line1'
+    count = count_imgs('videos/'+name+'.mp4', name)
+    #count = 302
+    print("resizing")
+    resize_imgs(count, name)
+    print("cross correlation")
+    cross_correlation(count, name)
+    print('drawing boxes')
+    localize_objects(count, name)
     print("printing photos")
     print_photos(count, name)
    
