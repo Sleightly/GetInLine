@@ -57,6 +57,8 @@ var layout3 = {
 };
 
 function startSlideShow1() {
+	clearInterval(interval);
+	resetTime();
 	current_number = 0
 	Play()
 	interval = setInterval(setImage1, time);
@@ -87,6 +89,8 @@ function startSlideShow1() {
 }
 
 function startSlideShow2() {
+	clearInterval(interval);
+	resetTime();
 	current_number = 0
 	Play()
 	interval = setInterval(setImage2, time);
@@ -118,6 +122,8 @@ function startSlideShow2() {
 }
 
 function startSlideShow3() {
+	clearInterval(interval);
+	resetTime();
 	current_number = 0
 	Play()
 	interval = setInterval(setImage3, time);
