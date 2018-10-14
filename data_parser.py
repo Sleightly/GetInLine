@@ -1,7 +1,7 @@
 import pandas as pd 
 import numpy as np 
 
-df = pd.read_csv('data/data_line1.csv')
+df = pd.read_csv('data/data_line2.csv')
 
 vel = []
 y = []
