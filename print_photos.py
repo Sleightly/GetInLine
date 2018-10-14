@@ -10,6 +10,8 @@ import cv2
 hog = cv2.HOGDescriptor()
 hog.setSVMDetector(cv2.HOGDescriptor_getDefaultPeopleDetector())
 count = 300
+
+
 for i in range (count):
 	imagePath = "draw/draw{}.jpg".format(i)
 	# load the image and resize it to (1) reduce detection time
@@ -29,9 +31,6 @@ for i in range (count):
 
 	# draw the final bounding boxes
 	for (xA, yA, xB, yB) in pick:
-		print(xA)
-		print(yA)
-		print()
 		cv2.rectangle(image, (xA, yA), (xB, yB), (0, 255, 0), 2)
 
 	# show some information on the number of bounding boxes
