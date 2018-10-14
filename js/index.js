@@ -6,8 +6,14 @@ var path3 = "draw/line3/"
 var time = 20
 var current_number = 0
 
+var totalSecs = 0
+
 function startSlideShow1() {
 	interval = setInterval(setImage1, time);
+}
+
+function startSlideShow1() {
+	interval = setInterval(setImage2, time);
 }
 
 function startSlideShow3() {
@@ -16,18 +22,35 @@ function startSlideShow3() {
 
 function stopSlideShow() {
 	clearInterval(interval);
-	document.getElementById("slides").setAttribute("src", "time.png")
+	resetTime();
+	totalSecs = 0;
+	document.getElementById("slides").setAttribute("src", "time.png");
 }
 
-function setImage3() {
+function setImage1() {
 	if (current_number >= 2204) {
 		stopSlideShow()
 		current_number = 0
 		return
 	}
 	document.getElementById("slides").setAttribute("src", "draw/line1/draw"+(current_number)+".jpg")
+	totalSecs = totalSecs+0.3;
+	setTime()
 	current_number++
 }
+
+function setImage2() {
+	if (current_number >= 2204) {
+		stopSlideShow()
+		current_number = 0
+		return
+	}
+	document.getElementById("slides").setAttribute("src", "draw/line2/draw"+(current_number)+".jpg")
+	totalSecs = totalSecs+0.3;
+	setTime()
+	current_number++
+}
+
 
 function setImage3() {
 	if (current_number >= 1534) {
@@ -35,8 +58,34 @@ function setImage3() {
 		current_number = 0
 		return
 	}
+	totalSecs = totalSecs+0.3;
+	setTime()
 	document.getElementById("slides").setAttribute("src", "draw/line3/draw"+(current_number)+".jpg")
 	current_number++
 }
 
 
+var minutesLabel = document.getElementById("minutes");
+var secondsLabel = document.getElementById("seconds");
+var totalSeconds = 0;
+
+function resetTime() {
+  totalSeconds = 0;
+  secondsLabel.innerHTML = pad(totalSeconds % 60);
+  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+
+function setTime() {
+  totalSeconds = Math.floor(totalSecs);
+  secondsLabel.innerHTML = pad(totalSeconds % 60);
+  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+}
+
+function pad(val) {
+  var valString = val + "";
+  if (valString.length < 2) {
+    return "0" + valString;
+  } else {
+    return valString;
+  }
+}

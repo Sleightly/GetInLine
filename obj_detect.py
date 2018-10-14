@@ -11,10 +11,11 @@ from google.cloud import vision
 from google.cloud.vision import types
 from PIL import Image, ImageDraw
 import PIL.Image
+import pandas as pd
 
-def localize_objects(count,name):
+def localize_objects(count,name, magnitude):
     client = vision.ImageAnnotatorClient()
-    
+    num_people = []
     for i in range (count):
         filename = "imgs/{}/frame{}.jpg".format(name, i)
         with io.open(filename, 'rb') as image_file:
@@ -28,6 +29,7 @@ def localize_objects(count,name):
         width, height = im.size
 
         print('Number of objects found: {}'.format(len(objects)))
+        num_people.append(len(objects))
         for object_ in objects:
             #print('\n{} (confidence: {})'.format(object_.name, object_.score))
             #print('Normalized bounding polygon vertices: ')
@@ -36,7 +38,21 @@ def localize_objects(count,name):
             box = [(vertex.x * width, vertex.y * height) for vertex in object_.bounding_poly.normalized_vertices]
             draw.line(box + [box[0]], width=5, fill='#00ff00')
 
+        start_x = width/2
+        y = height - 50
+        end_x = start_x + magnitude[i]
+        draw.line([(start_x, y), (end_x, y)], width=5, fill='#ffffff')
+
+
+        if (end_x < start_x):
+            start_x = end_x - 10
+        else:
+            start_x = end_x + 10
+
+        draw.polygon([(end_x, y), (start_x, y), (end_x, y-10)], fill='#0000ff')
+
         im.save("draw/{}/draw{}.jpg".format(name, i))
+    return num_people
 
 def print_photos(count, name):
     for i in range (count):
@@ -144,17 +160,21 @@ def cross_correlation(count, name):
 
 
 if __name__ == '__main__':
-    name = 'line1'
+    name = 'line3'
     count = count_imgs('videos/'+name+'.mp4', name)
     #count = 302
     print("resizing")
     resize_imgs(count, name)
     print("cross correlation")
-    cross_correlation(count, name)
+    magnitude = cross_correlation(count, name)
     print('drawing boxes')
-    localize_objects(count, name)
-    print("printing photos")
-    print_photos(count, name)
+    num_people = localize_objects(count, name, magnitude)
+    #print("printing photos")
+    #print_photos(count, name)
+    df = pd.DataFrame({'magnitude':magnitude, 'people':num_people})
+    df.to_csv("data/data_"+name+".csv")
+
+
    
 
 

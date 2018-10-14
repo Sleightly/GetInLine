@@ -227,6 +227,11 @@ ul {
   font-size: 3.5vh;
 }
 
+.index-btn:hover {
+  background: #bdfaff;
+}
+
+
 .index-subtext h3 {
     margin-top: -20px;
 }

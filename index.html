@@ -28,7 +28,7 @@
         <button type="button" id="demo1" class="btn index-btn" style="width: 20vw;" onclick="startSlideShow1()">Demo 1</button>
       </div>
       <div class="col">
-        <button type="button" id="demo2" class="btn index-btn" style="width: 20vw;">Demo 2</button>
+        <button type="button" id="demo2" class="btn index-btn" style="width: 20vw;" onclick="startSlideShow2()">Demo 2</button>
       </div>
       <div class="col">
         <button type="button" id="demo3" class="btn index-btn" style="width: 20vw;" onclick="startSlideShow3()">Demo 3</button>
@@ -36,9 +36,16 @@
     </div>
     <div class="row" style="height: 40vh;">
       <div class="col" style="padding: 5px;">
-        <img id="slides" src="time.png" alt="Demo" height=450" width="600">
+        <img id="slides" src="time.png" alt="Demo" height=400" width="600">
       </div>
     </div>
+    <div class="row" style="height: 40vh;">
+      <div class="col" style="padding: 160px;">
+        <label id="minutes">00</label>:<label id="seconds">00</label>
+      </div>
+    </div>
+
+    
   </div>
   <script src="js/index.js"></script>
 </body>
