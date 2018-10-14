@@ -22,8 +22,7 @@ def localize_objects(count,name, magnitude):
             content = image_file.read()        
         image = types.Image(content=content)
         objects = client.object_localization(
-            image=image).localized_object_annotations
-
+        image=image).localized_object_annotations
         im = PIL.Image.open(filename)
         draw = ImageDraw.Draw(im)
         width, height = im.size
@@ -162,10 +161,10 @@ def cross_correlation(count, name):
 
 if __name__ == '__main__':
     name = 'line3'
-    count = count_imgs('videos/'+name+'.mp4', name)
-    #count = 302
-    print("resizing")
-    resize_imgs(count, name)
+    #count = count_imgs('videos/'+name+'.mp4', name)
+    count = 302
+    #print("resizing")
+    #resize_imgs(count, name)
     print("cross correlation")
     magnitude = cross_correlation(count, name)
     print('drawing boxes')

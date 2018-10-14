@@ -40,13 +40,33 @@
       </div>
     </div>
     <div class="row" style="height: 40vh;">
-      <div class="col" style="padding: 160px;">
+      <div class="col" style="padding: 80px;">
         <label id="minutes">00</label>:<label id="seconds">00</label>
+      </div>
+    </div>
+    <div class="row" style="height: 40vh;">
+      <div class="col" style="padding: 5px;">
+        <h1> Statistics: </h1>
+      </div>
+    </div>
+    <div class="row" style="height: 40vh;">
+      <div class="col" style="padding: 5px;">
+        <h3> Estimate Wait Time: </h3>
+        <div id="ewt"><!-- Plotly chart will be drawn inside this DIV --></div>
+      </div>
+      <div class="col" style="padding: 5px;">
+        <h3> Number of People: </h3>
+        <div id="nump"><!-- Plotly chart will be drawn inside this DIV --></div>
+      </div>
+      <div class="col" style="padding: 5px;">
+        <h3> Velocity of Line </h3>
+        <div id="vel"><!-- Plotly chart will be drawn inside this DIV --></div>
       </div>
     </div>
 
     
   </div>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="js/index.js"></script>
 </body>
 </html>
