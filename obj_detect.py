@@ -29,7 +29,6 @@ def localize_objects(count,name, magnitude):
         print(i)
         print('Number of objects found: {}'.format(len(objects)))
         num_people.append(len(objects))
-        continue
         for object_ in objects:
             #print('\n{} (confidence: {})'.format(object_.name, object_.score))
             #print('Normalized bounding polygon vertices: ')
@@ -59,7 +58,6 @@ def print_photos(count, name):
         imagePath = "draw/{}/draw{}.jpg".format(name, i)
         cv2.imshow("After", cv2.imread(imagePath))
         cv2.waitKey(50)
-
 
 def count_imgs(file, name):
     print("parsing video\n")
@@ -92,7 +90,7 @@ def resize_imgs(count, name):
 def cross_correlation(count, name):
     #split resize image into fourths
     magnitude = []
-    for i in range(count-1):
+    for i in range(1):
         path = "resize/{}/res{}.jpg".format(name, i)
         f_path = "resize/{}/res{}.jpg".format(name, i+1)
 
@@ -113,6 +111,11 @@ def cross_correlation(count, name):
             indices.append(start_col)
             start_row, start_col = 0, end_col
             end_row, end_col = height, (end_col+width_offset)
+
+
+        for i in range(20):
+            testpath = "test/{}.jpg".format(name, i)
+            cv2.imwrite(testpath, cropped[i])
         
         #compare to future image
         f_image = cv2.imread(f_path)
@@ -160,19 +163,19 @@ def cross_correlation(count, name):
 
 
 if __name__ == '__main__':
-    name = 'line3'
+    name = 'line2'
     #count = count_imgs('videos/'+name+'.mp4', name)
-    count = 302
+    #count = 302
     #print("resizing")
     #resize_imgs(count, name)
-    print("cross correlation")
+    #print("cross correlation")
     magnitude = cross_correlation(count, name)
-    print('drawing boxes')
-    num_people = localize_objects(count, name, magnitude)
+    #print('drawing boxes')
+    #num_people = localize_objects(count, name, magnitude)
     #print("printing photos")
     #print_photos(count, name)
-    df = pd.DataFrame({'magnitude':magnitude, 'people':num_people})
-    df.to_csv("data/data_"+name+".csv")
+    #df = pd.DataFrame({'magnitude':magnitude, 'people':num_people})
+    #df.to_csv("data/data_"+name+".csv")
 
 
    

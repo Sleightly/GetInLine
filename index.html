@@ -9,6 +9,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
   <link href="css/getinline.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -39,32 +40,30 @@
         <img id="slides" src="time.png" alt="Demo" height=400" width="600">
       </div>
     </div>
-    <div class="row" style="height: 40vh;">
-      <div class="col" style="padding: 80px;">
-        <label id="minutes">00</label>:<label id="seconds">00</label>
-      </div>
-    </div>
-    <div class="row" style="height: 40vh;">
+    <br><br><br><br><br><br><br>
+
+    <i class="fa fa-play" style="font-size:24px;" onclick="Play()"></i> &nbsp;&nbsp;
+    <i class="fa fa-pause" style="font-size:24px;" onclick="Pause()"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+    <label id="minutes">00</label>:<label id="seconds">00</label>
+      
+    <div class="row" style="height: 24vh;">
       <div class="col" style="padding: 5px;">
         <h1> Statistics: </h1>
       </div>
     </div>
-    <div class="row" style="height: 40vh;">
-      <div class="col" style="padding: 5px;">
-        <h3> Estimate Wait Time: </h3>
-        <div id="ewt"><!-- Plotly chart will be drawn inside this DIV --></div>
-      </div>
-      <div class="col" style="padding: 5px;">
-        <h3> Number of People: </h3>
-        <div id="nump"><!-- Plotly chart will be drawn inside this DIV --></div>
-      </div>
-      <div class="col" style="padding: 5px;">
-        <h3> Velocity of Line </h3>
-        <div id="vel"><!-- Plotly chart will be drawn inside this DIV --></div>
-      </div>
-    </div>
+    <h3> Estimate Wait Time: </h3>
+    <div id="ewt"><!-- Plotly chart will be drawn inside this DIV --></div>
+    <br><br><br>
 
-    
+    <h3> Number of People: </h3>
+    <div id="nump"><!-- Plotly chart will be drawn inside this DIV --></div>
+    <br><br><br>
+
+    <h3> Velocity of the Line: </h3>
+    <div id="vel"><!-- Plotly chart will be drawn inside this DIV --></div>
+    <br><br><br>
+
+   
   </div>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
   <script src="js/index.js"></script>

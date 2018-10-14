@@ -162,6 +162,12 @@ ul {
 .logo {
     width: 30vh;
 }
+.fa-play:hover{
+    color: #bdfaff;
+}
+.fa-pause:hover{
+    color: #bdfaff;
+}
 
 @keyframes pulse1 {
     0% {
