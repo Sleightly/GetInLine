@@ -36,12 +36,13 @@ def localize_objects(count,name):
             box = [(vertex.x * width, vertex.y * height) for vertex in object_.bounding_poly.normalized_vertices]
             draw.line(box + [box[0]], width=5, fill='#00ff00')
 
-        im.save("draw/draw{}.jpg".format(i))
+        im.save("draw/{}/draw{}.jpg".format(name, i))
 
 def print_photos(count, name):
     for i in range (count):
         imagePath = "draw/{}/draw{}.jpg".format(name, i)
         cv2.imshow("After", cv2.imread(imagePath))
+        cv2.waitKey(50)
 
 
 def count_imgs(file, name):
@@ -144,14 +145,14 @@ def cross_correlation(count, name):
 
 if __name__ == '__main__':
     name = 'line3'
-    count = count_imgs('videos/line3.mp4', name)
+    #count = count_imgs('videos/line3.mp4', name)
     count = 302
-    print("resizing")
-    resize_imgs(count, name)
-    print("cross correlation")
-    cross_correlation(count, name)
-    print('drawing boxes')
-    localize_objects(count, name)
+    #print("resizing")
+    #resize_imgs(count, name)
+    #print("cross correlation")
+    #cross_correlation(count, name)
+    #print('drawing boxes')
+    #localize_objects(count, name)
     print("printing photos")
     print_photos(count, name)
    
