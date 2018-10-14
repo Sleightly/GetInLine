@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background-color: #bddae2;
+    background-color: #323a3c;
     height: 100vh;
 }
 
@@ -211,14 +211,15 @@ ul {
 
 .index-titletext {
     height: 22vh;
+    background-color: #bddae2;
 }
 
 .index-subtext {
-    background-color: #323a3c;
+    /* background-color: #323a3c; */
     color: white;
-    height: 78vh;
+    /* height: 78vh; */
     z-index: 0;
-    margin-top: -2px;
+    /* margin-top: -2px; */
 }
 
 .index-btn {
@@ -234,16 +235,19 @@ hr {
     z-index: 999;
     height: 20px;
     border: 0;
+    /* background-color: #bddae2; */
     box-shadow: inset 0 20px 20px -20px rgba(0, 0, 0, .9);
+    /* box-shadow: inset 0 20px 50px -20px rgba(0, 0, 200, .9); */
 }
 
 @media(max-width: 768px) {
     .index-titletext {
         height: 22vh;
+        background-color: #bddae2;
     }
-    .index-subtext {
+    /* .index-subtext {
         height: 78vh;
-    }
+    } */
     .subtext {
         width: 90%;
         font-size: 4vh;
@@ -257,298 +261,6 @@ hr {
 }
 
 /************************* END INDEX ********************************/
-
-/************************ CUSTOMIZE PAGE **************************/
-
-.customize {
-    box-shadow: inset 0 5px 5px -5px rgba(0, 0, 0, .9);
-    width: 86%;
-    margin-left: 7%;
-}
-
-.customize-body {
-    margin-top: -2%;
-}
-
-.customize-cat {
-    padding-top: 1%;
-    padding-left: 10%;
-}
-
-@media(max-width: 768px) {
-    .customize-cat {
-        margin-left: auto;
-        margin-right: auto;
-        width: 72%;
-        padding: 0;
-    }
-}
-
-.slidecontainer {
-    padding-left: 5%;
-}
-
-.slider {
-    -webkit-appearance: none;
-    width: 80%;
-    height: 10px;
-    border-radius: 5px;
-    background: #874c62;
-    outline: none;
-    opacity: 0.7;
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-    padding: 0 10px 0 10px;
-}
-
-.colorcontainer {
-    margin-left: 5%;
-}
-
-@media(max-width: 768px) {
-    .slider {
-        width: 100%;
-    }
-    .slidecontainer {
-        width: 90%;
-        margin-left: 5%;
-        padding: 0;
-    }
-    .colorcontainer {
-        margin-left: 10%;
-        margin-top: 8%;
-    }
-}
-
-.slider:hover {
-    opacity: 1;
-}
-
-.slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #4CAF50;
-    cursor: pointer;
-}
-
-.slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background: #4CAF50;
-    cursor: pointer;
-}
-
-.customize-buttons {
-    margin-left: 55%;
-}
-
-@media(max-width: 768px) {
-    .customize-buttons {
-        text-align: center;
-        margin-bottom: 10%;
-        margin-left: 0;
-    }
-
-    #checkCats{
-        margin-bottom: 10%;
-    }
-}
-
-.catFace {
-    position: relative;
-    width: 36vw;
-    height: auto;
-    /*right: 2vw;*/
-    z-index: 1;
-}
-
-.leftEye {
-    position: relative;
-    /*    bottom: -250px;
-    right: 1180px;*/
-    width: 6vw;
-    height: auto;
-    right: -12vw;
-    bottom: 21vw;
-    z-index: 2;
-    /*    bottom: 10vw;
-    right: 55vw;*/
-    /*  margin: 2vh 1vw;*/
-}
-
-.rightEye {
-    position: relative;
-    width: 6vw;
-    height: auto;
-    right: -23vw;
-    bottom: 27vw;
-    z-index: 2;
-}
-
-.catMouth {
-    position: relative;
-    width: 30vw;
-    height: auto;
-    right: -5.3vw;
-    bottom: 40vw;
-    z-index: 2;
-}
-
-.catHead {
-    position: relative;
-    width: 32vw;
-    height: 7vw;
-    bottom: 70.75vw;
-    left: 2vw;
-    z-index: 1;
-}
-
-@media(max-width: 768px) {
-    .catFace {
-        width: 72vw;
-    }
-    .leftEye {
-        width: 12vw;
-        right: -17vw;
-        bottom: 41vw;
-    }
-    .rightEye {
-        right: -44vw;
-        bottom: 53vw;
-        width: 12vw;
-    }
-    .catMouth {
-        width: 60vw;
-        bottom: 83vw;
-        right: -7vw;
-    }
-    .catHead {
-        width: 64vw;
-        left: 3vw;
-    }
-    .sliders {
-        margin-top: -95vw;
-    }
-}
-
-.navbar {
-    position: fixed;
-    background-color: transparent;
-    box-shadow: none;
-    left: 94%;
-    z-index: 9999;
-    width: 5%;
-}
-
-.navbar-nav>li>a {
-    padding: 0 !important;
-    margin: 0;
-}
-
-.navbar .navbar-toggle .icon-bar {
-    border: 2px black solid;
-}
-
-.home-button {
-    width: 3.5vw;
-    height: 3.5vw;
-    margin: 4% 0;
-    transition: .2s;
-    border-radius: 50%;
-    background-color: #a09b9a;
-    color: white;
-    font-size: 1.5vw;
-}
-
-@media(max-width: 768px) {
-    .home-button {
-        width: 10vw;
-        height: 10vw;
-        margin: 4% 0 4% 12%;
-        font-size: 5vw;
-    }
-    .navbar {
-        left: 85%;
-        width: 12%;
-        background-color: rgb(255, 255, 255, .8);
-        padding: 0;
-    }
-    .navbar-toggle {
-        margin: 15% 0;
-    }
-}
-
-.home-button:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-}
-
-#resultsPage {
-    margin: 0 5vw 10vw 5vw;
-}
-
-@media(max-width: 768px) {
-    #doneCustomize {
-        margin-bottom: 10vw;
-    }
-}
-
-/************************ END CUSTOMIZE PAGE **************************/
-
-/************************ CAT PICTURES PANEL *************************/
-
-#photos {
-    /* Prevent vertical gaps */
-    -webkit-column-count: 3;
-    -webkit-grid-column-gap: 10px;
-    -moz-column-count: 3;
-    -moz-grid-column-gap: 10px;
-    column-count: 3;
-    grid-column-gap: 10px;
-    margin: 0 5vw 5vw 5vw;
-}
-
-@media(max-width: 768px) {
-    #photos {
-        -webkit-column-count: 1;
-        -webkit-grid-column-gap: 10px;
-        -moz-column-count: 1;
-        -moz-grid-column-gap: 10px;
-        column-count: 1;
-        grid-column-gap: 10px;
-        margin: 0 0 5vw 5vw;
-    }
-}
-
-#photos img {
-    /* Just in case there are inline attributes */
-    width: 93% !important;
-    height: auto !important;
-    margin: 2vw 1.3vw;
-    border-radius: 10px;
-}
-
-/************************ END CAT PICTURES PANEL *************************/
-
-/************************ CAT FACTS ************************/
-
-.text-content {
-    padding: 0 15%;
-    text-align: center;
-}
-
-.graph {
-    margin-bottom: 5%;
-}
-
-.graph-buttons {
-    margin: 5% 0;
-}
-
-/************************ END CAT FACTS ************************/
 
 /************************* MISC ******************************/
 
