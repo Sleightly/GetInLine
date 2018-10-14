@@ -16,7 +16,7 @@ import pandas as pd
 def localize_objects(count,name, magnitude):
     client = vision.ImageAnnotatorClient()
     num_people = []
-    for i in range (count):
+    for i in range (count-1):
         filename = "imgs/{}/frame{}.jpg".format(name, i)
         with io.open(filename, 'rb') as image_file:
             content = image_file.read()        
@@ -27,9 +27,10 @@ def localize_objects(count,name, magnitude):
         im = PIL.Image.open(filename)
         draw = ImageDraw.Draw(im)
         width, height = im.size
-
+        print(i)
         print('Number of objects found: {}'.format(len(objects)))
         num_people.append(len(objects))
+        continue
         for object_ in objects:
             #print('\n{} (confidence: {})'.format(object_.name, object_.score))
             #print('Normalized bounding polygon vertices: ')
